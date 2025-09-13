@@ -1,3 +1,5 @@
+# Paste this file into your repo at: .github/workflows/android.yml
+
 name: Android CI (Build APK)
 
 on:
@@ -26,10 +28,10 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Build Debug APK
-        run: gradlew clean :app:assembleDebug
+        run: ./gradlew clean :app:assembleDebug
 
       - name: Build Release APK
-        run: gradlew :app:assembleRelease
+        run: ./gradlew :app:assembleRelease
 
       - name: Upload APKs
         uses: actions/upload-artifact@v4
