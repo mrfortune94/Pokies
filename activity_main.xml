@@ -1,0 +1,139 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <com.google.android.material.appbar.MaterialToolbar
+    android:id="@+id/topBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface"
+    app:title="@string/app_name" />
+
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize">
+
+    <WebView
+      android:id="@+id/web"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"/>
+
+    <LinearLayout
+      android:id="@+id/panel"
+      android:orientation="vertical"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:background="#FFFFFF"
+      android:padding="8dp">
+
+      <TextView
+        android:id="@+id/rtpTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RTP (live)"
+        android:textStyle="bold"/>
+
+      <TextView
+        android:id="@+id/rtpValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0.00%"
+        android:textSize="18sp"
+        android:paddingBottom="8dp"/>
+
+      <TextView
+        android:id="@+id/balTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Balance"
+        android:textStyle="bold"/>
+
+      <TextView
+        android:id="@+id/balanceValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="N/A"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"/>
+
+      <Spinner
+        android:id="@+id/testSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+      <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp">
+
+        <Button
+          android:id="@+id/btnRun"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Run"/>
+
+        <Button
+          android:id="@+id/btnExport"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Export"/>
+      </LinearLayout>
+
+      <EditText
+        android:id="@+id/edPin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter PIN (1187)"
+        android:inputType="numberPassword"
+        android:maxLength="4"/>
+
+      <EditText
+        android:id="@+id/edUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://duckduckgo.com"
+        android:hint="https://your-casino.example"/>
+
+      <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+          android:id="@+id/btnGo"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Go"/>
+        <Button
+          android:id="@+id/btnTogglePanel"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="Toggle Panel"/>
+      </LinearLayout>
+
+      <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+          android:id="@+id/logView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textIsSelectable="true"
+          android:textSize="12sp"
+          android:typeface="monospace"/>
+      </ScrollView>
+
+    </LinearLayout>
+  </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
