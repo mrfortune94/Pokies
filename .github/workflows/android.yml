@@ -28,10 +28,10 @@ jobs:
         uses: android-actions/setup-android@v3
 
       - name: Build Debug APK
-        run: ./gradlew clean :app:assembleDebug
+        run: gradle clean :app:assembleDebug
 
       - name: Build Release APK
-        run: ./gradlew :app:assembleRelease
+        run: gradle :app:assembleRelease
 
       - name: Upload APKs
         uses: actions/upload-artifact@v4
